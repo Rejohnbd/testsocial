@@ -1,0 +1,16 @@
+{
+  "files": {
+    "main.css": "/testsocial/static/css/main.0b711f9c.chunk.css",
+    "main.js": "/testsocial/static/js/main.00b17869.chunk.js",
+    "main.js.map": "/testsocial/static/js/main.00b17869.chunk.js.map",
+    "runtime~main.js": "/testsocial/static/js/runtime~main.4eb21c5d.js",
+    "runtime~main.js.map": "/testsocial/static/js/runtime~main.4eb21c5d.js.map",
+    "static/js/2.0c54e608.chunk.js": "/testsocial/static/js/2.0c54e608.chunk.js",
+    "static/js/2.0c54e608.chunk.js.map": "/testsocial/static/js/2.0c54e608.chunk.js.map",
+    "index.html": "/testsocial/index.html",
+    "precache-manifest.cf15cd9d70960a672f0251803fb57550.js": "/testsocial/precache-manifest.cf15cd9d70960a672f0251803fb57550.js",
+    "service-worker.js": "/testsocial/service-worker.js",
+    "static/css/main.0b711f9c.chunk.css.map": "/testsocial/static/css/main.0b711f9c.chunk.css.map",
+    "static/media/no-img.jpg": "/testsocial/static/media/no-img.8e5ac0ea.jpg"
+  }
+}
