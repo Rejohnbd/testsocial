@@ -17,7 +17,7 @@ import axios from 'axios';
 // Get All Screams
 export const getScreams = () => dispatch => {
     dispatch({ type: LOADING_DATA });
-    axios.get('/screams')
+    axios.get('https://us-central1-socialapp-2019.cloudfunctions.net/api/screams')
         .then(res => {
             dispatch({
                 type: SET_SCREAMS,
@@ -34,7 +34,7 @@ export const getScreams = () => dispatch => {
 
 export const getScream = (screamId) => dispatch => {
     dispatch({ type: LOADING_UI });
-    axios.get(`/scream/${screamId}`)
+    axios.get(`https://us-central1-socialapp-2019.cloudfunctions.net/api/scream/${screamId}`)
         .then(res => {
             dispatch({
                 type: SET_SCREAM,
@@ -47,7 +47,7 @@ export const getScream = (screamId) => dispatch => {
 // Post a Scream
 export const postScream = (newScream) => (dispatch) => {
     dispatch({ type: LOADING_UI });
-    axios.post('/scream', newScream)
+    axios.post('https://us-central1-socialapp-2019.cloudfunctions.net/api/scream', newScream)
         .then(res => {
             dispatch({
                 type: POST_SCREAM,
@@ -65,7 +65,7 @@ export const postScream = (newScream) => (dispatch) => {
 
 //Like a Scram
 export const likeScream = (screamId) => dispatch => {
-    axios.get(`/scream/${screamId}/like`)
+    axios.get(`https://us-central1-socialapp-2019.cloudfunctions.net/api/scream/${screamId}/like`)
         .then(res => {
             dispatch({
                 type: LIKE_SCREAM,
@@ -77,7 +77,7 @@ export const likeScream = (screamId) => dispatch => {
 
 //Unlike a Scram
 export const unlikeScream = (screamId) => dispatch => {
-    axios.get(`/scream/${screamId}/unlike`)
+    axios.get(`https://us-central1-socialapp-2019.cloudfunctions.net/api/scream/${screamId}/unlike`)
         .then(res => {
             dispatch({
                 type: UNLIKE_SCREAM,
@@ -88,7 +88,7 @@ export const unlikeScream = (screamId) => dispatch => {
 };
 
 export const submitComment = (screamId, commentData) => (dispatch) => {
-    axios.post(`/scream/${screamId}/comment`, commentData)
+    axios.post(`https://us-central1-socialapp-2019.cloudfunctions.net/api/scream/${screamId}/comment`, commentData)
         .then(res => {
             dispatch({
                 type: SUBMIT_COMMENT,
@@ -105,7 +105,7 @@ export const submitComment = (screamId, commentData) => (dispatch) => {
 }
 
 export const deleteScream = (screamId) => (dispatch) => {
-    axios.delete(`/scream/${screamId}`)
+    axios.delete(`https://us-central1-socialapp-2019.cloudfunctions.net/api/scream/${screamId}`)
         .then(() => {
             dispatch({
                 type: DELETE_SCREAM,
@@ -117,7 +117,7 @@ export const deleteScream = (screamId) => (dispatch) => {
 
 export const getUserData = (userHandle) => dispatch => {
     dispatch({ type: LOADING_DATA });
-    axios.get(`/user/${userHandle}`)
+    axios.get(`https://us-central1-socialapp-2019.cloudfunctions.net/api/user/${userHandle}`)
         .then(res => {
             dispatch({
                 type: SET_SCREAMS,

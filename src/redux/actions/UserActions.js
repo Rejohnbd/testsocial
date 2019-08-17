@@ -11,7 +11,7 @@ import axios from 'axios';
 
 export const loginUser = (userData, history) => (dispatch) => {
     dispatch({ type: LOADING_UI });
-    axios.post('/login', userData)
+    axios.post('https://us-central1-socialapp-2019.cloudfunctions.net/api/login', userData)
         .then((res) => {
             // console.log(res,'res')
             setAuthorizationHeader(res.data.token);
@@ -30,7 +30,7 @@ export const loginUser = (userData, history) => (dispatch) => {
 
 export const signupUser = (newUserData, history) => (dispatch) => {
     dispatch({ type: LOADING_UI });
-    axios.post('/signup', newUserData)
+    axios.post('https://us-central1-socialapp-2019.cloudfunctions.net/api/signup', newUserData)
         .then((res) => {
             // console.log(res,'res')
             setAuthorizationHeader(res.data.token);
@@ -55,7 +55,7 @@ export const logoutUser = () => (dispatch) => {
 
 export const getUserData = () => (dispatch) => {
     dispatch({ type: LOADING_USER });
-    axios.get('/user')
+    axios.get('https://us-central1-socialapp-2019.cloudfunctions.net/api/user')
         .then(res => {
             dispatch({
                 type: SET_USER,
@@ -67,7 +67,7 @@ export const getUserData = () => (dispatch) => {
 
 export const uploadImage = (formData) => (dispatch) => {
     dispatch({ type: LOADING_USER });
-    axios.post('/user/image', formData)
+    axios.post('https://us-central1-socialapp-2019.cloudfunctions.net/api/user/image', formData)
         .then(() => {
             dispatch(getUserData());
         })
@@ -76,7 +76,7 @@ export const uploadImage = (formData) => (dispatch) => {
 
 export const editUserDetails = (userDetails) => (dispatch) => {
     dispatch({ type: LOADING_USER });
-    axios.post('/user', userDetails)
+    axios.post('https://us-central1-socialapp-2019.cloudfunctions.net/api/user', userDetails)
         .then(() => {
             dispatch(getUserData());
         })
@@ -84,7 +84,7 @@ export const editUserDetails = (userDetails) => (dispatch) => {
 }
 
 export const markNotificationsRead = (notificationIds) => (dispatch) => {
-    axios.post('/notifications', notificationIds)
+    axios.post('https://us-central1-socialapp-2019.cloudfunctions.net/api/notifications', notificationIds)
         .then(res => {
             dispatch({
                 type: MARK_NOTIFICATIONS_READ
